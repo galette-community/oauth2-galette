@@ -60,7 +60,6 @@ class GaletteTest extends TestCase
     public function testGetAccessToken()
     {
         $response = m::mock('Psr\Http\Message\ResponseInterface');
-        //$response->shouldReceive('getBody')->andReturn('{"access_token": "mock_access_token", "token_type": "bearer", "account_id": "12345", "uid": "deprecated_id"}');
         $response
             ->shouldReceive('getBody')
             ->andReturn(
@@ -117,7 +116,8 @@ class GaletteTest extends TestCase
             ->andReturn(
                 new Stream(
                     fopen(
-                        'data://text/plain,{"id": '.$userId.', "username": "'.$username.'", "email": "'.$email.'", "language": "'.$lang.'", "status": '.$status.'}',
+                        'data://text/plain,{"id": '.$userId.', "username": "'.$username.'", "email": "'.
+                        $email.'", "language": "'.$lang.'", "status": '.$status.'}',
                         'r'
                     )
                 )
@@ -156,7 +156,7 @@ class GaletteTest extends TestCase
     public function testUserDataFails()
     {
         $this->expectException(\League\OAuth2\Client\Provider\Exception\IdentityProviderException::class);
-        $status = rand(400,600);
+        $status = rand(400, 600);
 
         $postResponse = m::mock('Psr\Http\Message\ResponseInterface');
         $postResponse

@@ -7,13 +7,16 @@ use League\OAuth2\Client\Tool\ArrayAccessorTrait;
 
 class GaletteResourceOwner implements ResourceOwnerInterface
 {
-	use ArrayAccessorTrait;
+    use ArrayAccessorTrait;
 
     /**
      * @var array<string, mixed>
      */
     protected array $response;
 
+    /**
+     * @param array<string, mixed> $response
+     */
     public function __construct(array $response = [])
     {
         $this->response = $response;
@@ -73,7 +76,7 @@ class GaletteResourceOwner implements ResourceOwnerInterface
     /**
      * Return all owner details available as an array.
      *
-     * @return array
+     * @return array<string, mixed>
      */
     public function toArray(): array
     {
