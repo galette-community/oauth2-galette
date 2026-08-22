@@ -2,12 +2,12 @@
 
 This package provides Galette OAuth 2.0 support for the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
 
-The [Galette OAuth plugin](https://galette-community.github.io/plugin-oauth2/) must be installed on you [Galette](https://galette.eu) instance.
+The [Galette OAuth plugin](https://galette-plugins.github.io/plugin-oauth2/) must be installed on you [Galette](https://galette.eu) instance.
 
 ## Installation
 
 ```cmd
-composer require galette-community/oauth2-galette
+composer require galette-plugins/oauth2-galette
 ```
 
 ## Usage
